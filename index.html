@@ -31,29 +31,31 @@
             opacity: 0.5;
         }
       
-        .nav {
+       .nav {
   position: fixed;
   top: 0;
-  left: 0; /* Ensure it spans the full width from the left */
+  left: 0;
   width: 100%;
   background: rgba(26, 26, 26, 0.85);
   padding: 15px 20px;
   display: flex;
   justify-content: center;
-  gap: 40px; /* Reduced gap for smaller screens */
+  gap: 40px;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  -webkit-backface-visibility: hidden; /* Helps with potential rendering issues */
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  padding-top: calc(15px + env(safe-area-inset-top)); /* Add safe area inset */
 }
 
 @media (max-width: 768px) {
   .nav {
-    gap: 20px; /* Further reduced gap for very small screens */
-    padding: 10px 15px; /* Adjust padding for smaller screens */
+    gap: 20px;
+    padding: 10px 15px;
+    padding-top: calc(10px + env(safe-area-inset-top)); /* Adjust for smaller padding */
   }
   .nav a {
-    font-size: 0.9em; /* Slightly reduce font size of links */
+    font-size: 0.9em;
   }
 }
         .nav a {
