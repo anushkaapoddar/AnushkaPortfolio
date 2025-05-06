@@ -16,7 +16,7 @@
   background: #1a1a1a;
   position: relative;
   scroll-behavior: smooth;
-  padding-top: 50px; 
+  padding-top: 50px; /* Add some top padding to the body */
 }
 
         .video-background {
@@ -31,17 +31,30 @@
             opacity: 0.5;
         }
       
-.nav {
+        .nav {
   position: fixed;
   top: 0;
+  left: 0; /* Ensure it spans the full width from the left */
   width: 100%;
   background: rgba(26, 26, 26, 0.85);
   padding: 15px 20px;
   display: flex;
   justify-content: center;
-  gap: 65px;
+  gap: 40px; /* Reduced gap for smaller screens */
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  -webkit-backface-visibility: hidden; /* Helps with potential rendering issues */
+  backface-visibility: hidden;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    gap: 20px; /* Further reduced gap for very small screens */
+    padding: 10px 15px; /* Adjust padding for smaller screens */
+  }
+  .nav a {
+    font-size: 0.9em; /* Slightly reduce font size of links */
+  }
 }
         .nav a {
             color: #f0f0f0;
@@ -64,29 +77,29 @@
             background: rgba(0, 0, 0, 0.3);
         }
         .hero h1 {
-  font-size: 3.0rem; 
+  font-size: 3.0rem; /* Slightly reduce the default font size */
   font-weight: bold;
   margin: 0;
-  white-space: normal; 
-  overflow: visible;   
-  border-right: none;   
-  width: auto;       
-  animation: none;    
+  white-space: normal; /* Allow the name to wrap if it's too long */
+  overflow: visible;    /* Ensure all content is visible */
+  border-right: none;   /* Remove the typing cursor effect for now on smaller screens */
+  width: auto;         /* Allow the width to adjust to the content */
+  animation: none;     /* Disable the typing animation on smaller screens */
   margin-bottom: 15px;
-  line-height: 1.2;    
+  line-height: 1.2;     /* Improve line spacing if the name wraps */
 }
 
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 2.4rem;
-    border-right: none; 
-    animation: none;   
+    font-size: 2.4rem; /* Further reduce font size for smaller screens */
+    border-right: none; /* Ensure no border on mobile */
+    animation: none;   /* Ensure no animation on mobile */
   }
 }
 
 @media (max-width: 480px) {
   .hero h1 {
-    font-size: 2.0rem;
+    font-size: 2.0rem; /* Even smaller font size for very small screens */
   }
 }
         @keyframes typing {
@@ -717,14 +730,6 @@
 
         /* --- Optional: Adjust for very large screens --- */
         @media (min-width: 1920px) {
-            .nav {
-                gap: 80px;
-                padding: 20px 30px;
-            }
-            .nav a {
-                font-size: 1.2em;
-            }
-            
             .hero p {
                 font-size: 2rem;
             }
