@@ -146,23 +146,22 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(0, 179, 134, 0.4);
         }
-        .top-navigation-container {
-  display: flex; /* Or display: block; with child elements as inline-block */
-  overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
-  /* Optional styling */
-  padding: 10px;
-  background-color: #f0f0f0; /* Example background */
-  border-bottom: 1px solid #ccc; /* Example border */
-}
+   @media (max-width: 600px) { /* Adjust the breakpoint as needed */
+  .top-navigation {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch; /* For smoother iOS scrolling */
+    padding: 10px 15px; /* Add some padding around the items */
+  }
 
-.top-navigation-container .nav-item {
-  display: inline-block; /* If .top-navigation-container is flex, this might not be needed */
-  padding: 8px 15px;
-  text-decoration: none;
-  color: #333;
-  /* Optional styling */
+  .top-navigation a { /* Assuming the items are links */
+    display: block; /* Or inline-block with width/spacing */
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #333;
+    flex-shrink: 0; /* Prevent shrinking in flex layout */
+  }
 }
         .social-links {
             display: flex;
