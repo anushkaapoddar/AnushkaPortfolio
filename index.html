@@ -146,21 +146,35 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(0, 179, 134, 0.4);
         }
-   @media (max-width: 600px) { /* Adjust the breakpoint as needed */
-  .top-navigation {
+ /* Target screens with a maximum width of, for example, 768 pixels (common for phones) */
+@media (max-width: 768px) {
+  .your-navigation-container { /* Replace with the actual class or element selector of the container holding your links */
     display: flex;
     overflow-x: auto;
     white-space: nowrap;
-    -webkit-overflow-scrolling: touch; /* For smoother iOS scrolling */
-    padding: 10px 15px; /* Add some padding around the items */
+    -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+    padding: 10px 15px; /* Add some padding around the links */
+    background-color: #1a1a1a; /* Match the background color */
+    /* Optional: Add a subtle border at the bottom if needed */
+    /* border-bottom: 1px solid #333; */
   }
 
-  .top-navigation a { /* Assuming the items are links */
-    display: block; /* Or inline-block with width/spacing */
-    padding: 8px 12px;
-    text-decoration: none;
-    color: #333;
-    flex-shrink: 0; /* Prevent shrinking in flex layout */
+  .your-navigation-container a { /* Target the link elements */
+    color: #d4d4d4; /* Set the link color to white or your preferred color */
+    text-decoration: none; /* Remove the underline */
+    padding: 8px 15px; /* Add padding around each link */
+    margin-right: 10px; /* Add some spacing between the links */
+    font-size: 0.9em; /* Adjust font size if needed */
+    flex-shrink: 0; /* Prevent links from shrinking */
+  }
+
+  /* Optional: Style the active/hover states for better interaction */
+  .your-navigation-container a:hover {
+    color: #ccc; /* Slightly lighter color on hover */
+  }
+
+  .your-navigation-container a:active {
+    color: #aaa; /* Even lighter color when active/clicked */
   }
 }
         .social-links {
