@@ -61,16 +61,31 @@
             background: rgba(0, 0, 0, 0.3);
         }
         .hero h1 {
-            font-size: 2rem;
-            font-weight: bold;
-            margin: 0;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 4px solid #ffffff;
-            width: fit-content;
-            animation: typing 2.5s steps(15, end) forwards, blink 0.7s step-end infinite;
-            margin-bottom: 15px;
-        }
+  font-size: 3.0rem; /* Slightly reduce the default font size */
+  font-weight: bold;
+  margin: 0;
+  white-space: normal; /* Allow the name to wrap if it's too long */
+  overflow: visible;    /* Ensure all content is visible */
+  border-right: none;   /* Remove the typing cursor effect for now on smaller screens */
+  width: auto;         /* Allow the width to adjust to the content */
+  animation: none;     /* Disable the typing animation on smaller screens */
+  margin-bottom: 15px;
+  line-height: 1.2;     /* Improve line spacing if the name wraps */
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.4rem; /* Further reduce font size for smaller screens */
+    border-right: none; /* Ensure no border on mobile */
+    animation: none;   /* Ensure no animation on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.0rem; /* Even smaller font size for very small screens */
+  }
+}
         @keyframes typing {
             from { width: 0; }
             to { width: 15ch; }
@@ -573,8 +588,10 @@
             color: #f0f0f0;
         }
 
-    
-        @media (max-width: 1024px) {
+        /* --- Media Queries for Responsiveness --- */
+
+        /* For tablets and larger mobile devices (up to 1024px width) */
+        @media (max-width: 768px) {
             .nav {
                 gap: 40px;
                 padding: 12px 18px;
@@ -704,9 +721,7 @@
             .nav a {
                 font-size: 1.2em;
             }
-            .hero h1 {
-                font-size: 4.5rem;
-            }
+            
             .hero p {
                 font-size: 2rem;
             }
