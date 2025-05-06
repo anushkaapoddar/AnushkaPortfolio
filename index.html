@@ -31,7 +31,7 @@
             opacity: 0.5;
         }
       
-        .nav {
+       .nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -41,18 +41,19 @@
   display: flex;
   justify-content: center;
   gap: 40px;
-  z-index: 1000;
+  z-index: 1001; /* Increased z-index */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  padding-top: calc(15px + env(safe-area-inset-top)); /* Add safe area inset */
+  padding-top: calc(15px + env(safe-area-inset-top));
 }
 
 @media (max-width: 768px) {
   .nav {
     gap: 20px;
     padding: 10px 15px;
-    padding-top: calc(10px + env(safe-area-inset-top)); /* Adjust for smaller padding */
+    padding-top: calc(10px + env(safe-area-inset-top));
+    z-index: 1001; /* Increased z-index here too */
   }
   .nav a {
     font-size: 0.9em;
