@@ -7,16 +7,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #d4d4d4;
-            overflow-x: hidden;
-            background: #1a1a1a;
-            position: relative;
-            scroll-behavior: smooth;
-        }
+         body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #d4d4d4;
+  overflow-x: hidden;
+  background: #1a1a1a;
+  position: relative;
+  scroll-behavior: smooth;
+  padding-top: 50px; 
+}
+
         .video-background {
             overflow: hidden;
             position: fixed;
@@ -28,18 +30,19 @@
             z-index: -1;
             opacity: 0.5;
         }
-        .nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(26, 26, 26, 0.85);
-            padding: 15px 20px;
-            display: flex;
-            justify-content: center;
-            gap: 65px;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
+      
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(26, 26, 26, 0.85);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 65px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
         .nav a {
             color: #f0f0f0;
             text-decoration: none;
@@ -61,29 +64,29 @@
             background: rgba(0, 0, 0, 0.3);
         }
         .hero h1 {
-  font-size: 3.0rem; /* Slightly reduce the default font size */
+  font-size: 3.0rem; 
   font-weight: bold;
   margin: 0;
-  white-space: normal; /* Allow the name to wrap if it's too long */
-  overflow: visible;    /* Ensure all content is visible */
-  border-right: none;   /* Remove the typing cursor effect for now on smaller screens */
-  width: auto;         /* Allow the width to adjust to the content */
-  animation: none;     /* Disable the typing animation on smaller screens */
+  white-space: normal; 
+  overflow: visible;   
+  border-right: none;   
+  width: auto;       
+  animation: none;    
   margin-bottom: 15px;
-  line-height: 1.2;     /* Improve line spacing if the name wraps */
+  line-height: 1.2;    
 }
 
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 2.4rem; /* Further reduce font size for smaller screens */
-    border-right: none; /* Ensure no border on mobile */
-    animation: none;   /* Ensure no animation on mobile */
+    font-size: 2.4rem;
+    border-right: none; 
+    animation: none;   
   }
 }
 
 @media (max-width: 480px) {
   .hero h1 {
-    font-size: 2.0rem; /* Even smaller font size for very small screens */
+    font-size: 2.0rem;
   }
 }
         @keyframes typing {
